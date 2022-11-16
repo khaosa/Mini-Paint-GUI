@@ -13,8 +13,8 @@ import java.util.Map;
  *
  * @author LENOVO
  */
-public class Rectangle extends BaseShape implements Shape{
-    
+public class Rectangle extends BaseShape implements Shape {
+
     private int height;
     private int width;
 
@@ -33,7 +33,8 @@ public class Rectangle extends BaseShape implements Shape{
     public void setWidth(int width) {
         this.width = width;
     }
-     @Override
+
+    @Override
     public void setPosition(Point position) {
         this.position = position;
     }
@@ -55,24 +56,24 @@ public class Rectangle extends BaseShape implements Shape{
 
     @Override
     public void setFillColor(Color color) {
-        this.color = color;
+        this.fillColor = color;
     }
 
     @Override
     public Color getFillColor() {
         return this.fillColor;
-            
+
     }
 
     @Override
     public void draw(Graphics canvas) {
         Color oldColor = canvas.getColor();
-         canvas.setColor(this.color);
+        canvas.setColor(this.fillColor);
+        canvas.fillRect(this.getPosition().x, this.getPosition().y, this.getWidth(), this.getHeight());
+        canvas.setColor(this.color);
         canvas.drawRect(this.getPosition().x, this.getPosition().y, this.getWidth(), this.getHeight());
         canvas.setColor(oldColor);
-        
+
     }
-    
-    
-    
+
 }

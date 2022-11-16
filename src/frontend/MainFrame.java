@@ -275,7 +275,9 @@ public class MainFrame extends javax.swing.JFrame {
         if (ChooseShapeComboBox.getSelectedIndex() <= 0) {
         } else {
             Color chosenColor = JColorChooser.showDialog(null, "Select a color", Color.white);
+            Color chosenFillColor = JColorChooser.showDialog(null, "Select a filling color", Color.white);
             Shape temp = drawingArea1.drawnShapes.get(ChooseShapeComboBox.getSelectedIndex() - 1);
+            temp.setFillColor(chosenFillColor);
             temp.setColor(chosenColor);
             drawingArea1.repaint();
         }

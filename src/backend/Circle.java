@@ -60,6 +60,8 @@ public class Circle extends BaseShape implements Shape {
         Color oldColor = canvas.getColor();
         canvas.setColor(this.color);
         canvas.drawOval(this.getPosition().x, this.getPosition().y, 2 * this.getRadius(), 2 * this.getRadius());
+        canvas.setColor(this.fillColor);
+        canvas.fillOval(this.getPosition().x, this.getPosition().y, 2 * this.getRadius(), 2 * this.getRadius());
         canvas.setColor(oldColor);
     }
     
